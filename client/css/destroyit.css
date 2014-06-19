@@ -1,0 +1,545 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+body {
+  background-color: #1a1a1a;
+  background-image:url('../img/bg_tile.png');
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;  
+  background-attachment: fixed;
+}
+
+h2 {
+  font-size: 22px;
+  line-height: 120%;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #eb2c31;
+  padding: 0;
+  margin: 10px 0 10px 0;
+}
+
+h2.twitter-now-header {
+  color: #ffffff;
+  padding: 0 0 10px 0;
+  float: left;
+}
+
+h2.twitter-group-header {
+  padding: 20px 0 0 5px;
+}
+
+h2 small {
+  font-size: 45%;
+  letter-spacing: 1px;
+}
+
+h3 {
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  line-height: 140%;
+}
+
+p {
+  color: #999999;
+  line-height: 23px;
+  letter-spacing: 0.08em;
+  font-size: 13px;
+}
+
+.header {
+  padding: 0 0 10px 0;
+}
+
+.header-icon {
+  padding: 0 10px 0 0;
+  margin: -5px 0 0 0;
+}
+
+.list-group-item:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0
+}
+
+.list-group-item:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0
+}
+
+.img-responsive {
+  display: inline;
+}
+
+.clear {
+  clear: both;
+}
+
+a:link {color:#eb2c31;}    
+a:visited {color:#eb2c31;}
+a:hover {
+  color:#ffffff;
+  text-decoration: none;
+} 
+a:active {color:#eb2c31;}  
+
+/*
+ * Screen - 767px
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 767px) {
+  .btn-style {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+  }
+
+  .logo {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/*
+ * Logo
+ * --------------------------------------------------
+ */
+.logo {
+  padding:30px 5px;
+}
+
+
+/*
+ * Video Player
+ * --------------------------------------------------
+ */
+.videoContainer-live {
+	margin: 0;
+	padding: 0;
+}
+
+.videoContainer-pre, .videoContainer-post {
+  margin: 0;  
+  padding: 0 0 20px 0; 
+}
+
+.videoToggle {
+	margin: 0;
+	padding: 5px 1px 5px 0;
+}
+
+.videoToggle-cam1 {
+  background-image: url('../img/toggle_cam1_off.png') !important;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  width: 65px;
+  height: 23px;
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.videoToggle-cam2 {
+  background-image: url('../img/toggle_cam2_off.png') !important;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  width: 65px;
+  height: 23px;
+  border: 0;
+  border-radius: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.videoToggle-cam1:active, .videoToggle-cam1.active {
+  background-image: url('../img/toggle_cam1_on.png') !important;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  width: 65px;
+  height: 23px;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.videoToggle-cam2:active, .videoToggle-cam2.active {
+  background-image: url('../img/toggle_cam2_on.png') !important;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  width: 65px;
+  height: 23px;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+
+#videoToggleGroup {
+  outline: 2px solid #000000;
+}
+
+figure { 
+  display: block; 
+  padding: 0;
+}
+
+
+/*
+ * Twitter Feed
+ * --------------------------------------------------
+ */
+.twitter-wrapper {
+  height: 1099px;
+  overflow: hidden;
+  padding: 0;
+  margin: 10px 0 0 5px;
+  width: 380px;
+}
+
+.twitter-group {
+  margin-top: -12px;
+  width: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  padding-left: 15px;
+  padding-right: 25px;
+}
+
+.twitter-now-wrapper {
+  background-image: url('../img/bg_technow.png');
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: 0;
+  padding: 1px 0 0 30px;
+  margin: 0 0 0 -15px;
+  width: 399px;
+  height: 199px;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: lighter;
+}
+
+.twitter-now-icon {
+  margin:0; 
+  padding: 5px 0 0 0;  
+}
+
+.twitter-now-queue {
+  margin:15px 0 0 0; 
+  padding:0;
+  -webkit-filter: brightness(500%); 
+}
+
+.twitter-now-text {
+  font-size: 90%;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+
+.twitter-now-post {
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0 0 0 0;
+}
+
+.twitter-now-post small {
+  color: #ff989b;
+}
+
+.twitter-now-countdown {
+  padding: 9px;
+  color: #ff989b;
+  font-size: 22px;
+  font-weight: bold;
+  float: right;
+}
+
+.twitter-item {
+  background-color: transparent;
+  border: 0;
+  border-bottom: thin solid #616161;
+  border-top: 0;
+  padding: 10px 0 0 0;
+  margin: 0;
+  /*height: auto;*/ 
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: lighter;
+}
+
+.twitter-item-text {
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.twitter-item-text span {
+  color: #eb2c31;
+}
+
+.twitter-item-icon {
+  margin: 5px 0 0 0;
+  padding: 16px 0 0 0;
+}
+
+.twitter-item-post {
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 18px 0 0 0;
+}
+
+.twitter-item-post small {
+  font-size: 75%;
+  letter-spacing: 0;
+  color: #cccccc;
+}
+
+.twitter-item-queue {
+  margin: 30px 0 0 0; 
+  padding: 0;
+/*  opacity: 0.4;
+  filter: alpha(opacity=40);*/ /* For IE8 and earlier */
+}
+
+.twitter-header {
+  padding-left: 5px;
+}
+
+.twitter-arrow {
+  padding: 10px 60px 0 0;
+  display: none;
+}
+
+.twitter-column-down {
+  width: 386px;
+  height: 361px;
+  background-color: rgba(0,0,0,0.4);
+  margin-left: -10px;
+  padding-top: 25%;
+}
+
+.tweet-disable {
+  cursor: default;
+  -webkit-filter: grayscale(1);
+}
+
+/*
+ * Bootstrap Mod
+ * --------------------------------------------------
+ */
+.col-md-7 {
+  padding-right: 10px;
+}
+
+.col-md-5 {
+  padding-left: 10px;
+}
+
+.thumbnail {
+  background-color: transparent;
+  border: 0;
+}
+
+.btn-group-xs>.btn {
+  border-radius: 0;
+}
+
+/*
+ * Misc
+ * --------------------------------------------------
+ */
+.divider {
+  padding-top: 30px;
+}
+
+.wait-countdown {
+  text-align: right; 
+  padding: 0 15px 0 0; 
+  font-size:13px; 
+  letter-spacing:0;
+}
+
+.btn-twitter {
+  padding: 20px 0;
+}
+
+
+/*
+ * Modal
+ * --------------------------------------------------
+ */
+ .modal-dialog {
+  padding: 0;
+}
+
+.modal-header {
+  border-bottom: 0;
+  padding: 0 0 40px 0;
+}
+
+.modal-body {
+  padding: 0;
+  margin: 0;    
+  width: 100%;
+  height: 100%;
+}
+
+.modal-content {
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.modal-header .close {
+  color: #eb2c31;
+  opacity: 1; 
+  text-shadow: 0 1px 0 #666;
+  font-size: 25px;
+}
+
+.close:hover, .close:focus {
+  color: #fff;
+}
+
+/*
+ * Flip Clock
+ * --------------------------------------------------
+ */
+.pre-clock {
+  height: 110px;
+}
+
+.flip-clock-wrapper {
+  position: relative;
+  display: inline-table;
+  text-align: center;
+  margin: 0;
+  width: auto;
+  height: auto;
+  padding: 10px 0 30px 0;
+}
+
+.flip-clock-wrapper ul {
+  position: relative;
+  float: left;
+  margin: 1px;
+  width: 32px;
+  height: 52px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 51px;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.flip-clock-wrapper ul li {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-decoration: none !important;
+}
+
+.flip-clock-wrapper ul li a div div.inn {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 200%;
+  color: #fbf9f1;
+  text-align: center;
+  background-color: #eb2c32;
+  border-radius: 0;
+  font-size: 40px; 
+}
+
+.flip-clock-wrapper ul li a div.up:after {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.flip-clock-divider {
+  float: left;
+  display: inline-block;
+  position: relative;
+  width: 12px;
+  height: 55px; 
+}
+
+.flip-clock-divider .flip-clock-label {  
+  position: absolute;
+  bottom: 0;
+  margin-top: 73px;
+  right: -28px;
+  color: #ffffff;
+  font-size:10px; 
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: none; 
+}
+
+.flip-clock-divider.hours .flip-clock-label {  
+  right: -37px; }
+
+.flip-clock-divider.minutes .flip-clock-label {  
+  right: -46px; }
+
+.flip-clock-divider.seconds .flip-clock-label {  
+  right: -50px; }
+
+.flip-clock-dot {  
+  display: block;
+  background: #eb2c32;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  left: 4px; 
+}  
+
+/*
+ * Footer
+ * --------------------------------------------------
+ */
+footer {  
+  padding: 40px 0 40px 0;
+  margin: 0;
+  display: inherit;
+}
+
+.footer-logo {
+  padding: 0 5px 0 0;
+}
+
+.footer-icon {
+  padding: 0 5px;
+}
+
+.copyright {
+  font-size: 13px;
+  display: inline-block;
+  padding:0;
+  margin: 0 0 -5px;
+  vertical-align: bottom;
+}

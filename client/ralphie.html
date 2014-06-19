@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="We are a technology-fueled creative agency. Technology fuels new possibilities, helping us transform businesses and brands to thrive in a constant-change world.">
+    <meta name="author" content="">
+    <meta http-equiv="expire" content="0">
+
+
+    <meta property="og:url" content="http://www.t-3.com/"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:title" content="Techorate The Tree by T3"/>
+    <meta property="og:description" content="We are a technology-fueled creative agency. Technology fuels new possibilities, helping us transform businesses and brands to thrive in a constant-change world."/>
+    <meta property="og:image" content="http://d1whvzovvu3i7a.cloudfront.netT3_Logo_300x300.jpg.jpg"/>    
+
+
+    <title>Techorate The Tree by T3</title>  
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->        
+  </head>
+
+  <body>    
+    
+    <div>
+
+      <div class="row text-center">
+        <br><Br>
+        YOU'LL SHOOT YOUR EYE OUT, KID.
+        <br><br><Br><Br>
+      </div>  
+
+      <div id="form">
+          <center>
+          <form id="status">
+            <input id="tinsel" type="checkbox" name="tinsel" value="tinsel" > CANNON 1: TINSEL<br>
+            <br>
+            <input id="fruitcake" type="checkbox" name="fruitcake" value="fruitcake" > CANNON 2: FRUITCAKE<br>
+            <br> 
+            <input id="candycane" type="checkbox" name="candycane" value="candycane" > CANNON 3: CANDYCANE<br>
+            <br> 
+            <input id="nutcracker" type="checkbox" name="nutcracker" value="nutcracker" > CANNON 4: NUTCRACKER<br>
+            <br> 
+            <input id="bird" type="checkbox" name="bird" value="bird" > CANNON 5: BIRD<br>
+            <br> 
+            <input id="ball" type="checkbox" name="ball" value="ball" > CANNON 6: BALL<br>
+            <br> 
+            <br>
+            <br>
+            PAGE STATUSES:<br>
+            <br>
+            <input id="pre" type="radio" name="pageStatus" value="pre"> PRE<br><br>
+            <input id="live" type="radio" name="pageStatus" value="live"> LIVE<br><br>
+            <input id="down" type="radio" name="pageStatus" value="down"> DOWN<br><br>
+            <input id="post" type="radio" name="pageStatus" value="post"> POST<br><br>
+          </form>
+        </center>
+      </div>
+
+    </div><!--/.container-->
+    
+
+    
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/plugins.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/t3holiday/jquery.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/t3holiday/socket.js"></script>
+    <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+    <script src="jquery/iphone-style-checkboxes.js"></script>
+    <!-- <script src="js/main.js"></script> -->   
+    <script>
+      var radioArr = [ "pre", "live", "down", "post" ];
+      window.socket = io.connect("http://techoratethetree.com:80");
+      socket.on('status', function (data) {
+        console.log('cannonStatus: ' + JSON.stringify(data));
+        data.forEach(function(entry) {
+          //console.log(entry.name);
+          //console.log(Boolean(Number(entry.status)));
+          if ( Number(entry.id) < 500 ) {
+            //console.log("setting " + entry.name + " to " + Boolean(Number(entry.status)));
+            document.getElementById(entry.name).checked = Boolean(Number(entry.status));
+          }
+          if ( Number(entry.id) === 500 ) {
+            document.getElementById(radioArr[entry.status]).checked = true;
+          }
+        });
+
+      });
+
+      $( "#form" ).change(function() {
+        var fj = {};
+        fj.tinsel = String(document.getElementById("tinsel").checked);
+        fj.candycane = String(document.getElementById("candycane").checked);
+        fj.nutcracker = String(document.getElementById("nutcracker").checked);
+        fj.bird = String(document.getElementById("bird").checked);
+        fj.fruitcake = String(document.getElementById("fruitcake").checked);
+        fj.ball = String(document.getElementById("ball").checked);
+        var frm = document.getElementById('status');
+        console.log(frm);
+        var checkedRadio;
+        for (var i = 0; i < frm.pageStatus.length; i++){
+          if (frm.pageStatus[i].checked){
+            checkedRadio = i;
+            break;
+          }
+        }
+
+        fj.page_status = checkedRadio
+
+        console.log(JSON.stringify(fj));
+        socket.emit('ralphie', fj);
+      });
+
+    </script>       
+  </body>
+</html>
